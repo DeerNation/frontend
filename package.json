@@ -1,0 +1,53 @@
+{
+  "name": "DeerNation web frontend",
+  "description": "Browser based GUI for the DeerNation application",
+  "version": "1.0.0",
+  "contributors": [
+    {
+      "name": "Tobias Bräutigam",
+      "email": "tbraeutigam@gmail.com"
+    }
+  ],
+  "dependencies": {
+  },
+  "keywords": [
+  ],
+  "readmeFilename": "README.md",
+  "scripts": {
+    "frontend": "ENV=dev cd frontend/app && qx serve",
+    "compile-frontend-source": "cd frontend/app && qx compile && cd ../../",
+    "compile-frontend-build": "cd frontend/app && qx compile --target=build && cd ../../",
+    "compile-frontend-app": "cd frontend/app && CORDOVA=1 qx compile --target=build && cd ../../"
+  },
+  "devDependencies": {
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "env": {
+      "browser": true,
+      "node": true
+    },
+    "ignore": [
+      "qooxdoo/**",
+      "node_modules/**",
+      "app/build-output/**",
+      "app/source-output/**",
+      "app/contrib/**",
+      "app/source/resource/js/**"
+    ],
+    "globals": [
+      "app",
+      "qx",
+      "dialog",
+      "socketCluster",
+      "wampSocketCluster",
+      "showdown",
+      "firebase",
+      "PushNotification",
+      "scCodecMinBin",
+      "$",
+      "proto",
+      "jspb"
+    ]
+  }
+}
