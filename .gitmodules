@@ -1,3 +1,6 @@
 [submodule "qooxdoo"]
 	path = qooxdoo
 	url = https://github.com/peuter/qooxdoo.git
+[submodule "protos"]
+	path = protos
+	url = https://github.com/DeerNation/protos.git

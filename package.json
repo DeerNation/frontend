@@ -1,5 +1,5 @@
 {
-  "name": "DeerNation web frontend",
+  "name": "deernation-web-frontend",
   "description": "Browser based GUI for the DeerNation application",
   "version": "1.0.0",
   "contributors": [
@@ -8,18 +8,17 @@
       "email": "tbraeutigam@gmail.com"
     }
   ],
-  "dependencies": {
-  },
-  "keywords": [
-  ],
+  "dependencies": {},
+  "keywords": [],
   "readmeFilename": "README.md",
   "scripts": {
-    "frontend": "ENV=dev cd frontend/app && qx serve",
-    "compile-frontend-source": "cd frontend/app && qx compile && cd ../../",
-    "compile-frontend-build": "cd frontend/app && qx compile --target=build && cd ../../",
-    "compile-frontend-app": "cd frontend/app && CORDOVA=1 qx compile --target=build && cd ../../"
+    "frontend": "ENV=dev cd app && qx serve",
+    "compile-frontend-source": "cd app && qx compile && cd ../",
+    "compile-frontend-build": "cd app && qx compile --target=build && cd ../",
+    "compile-frontend-app": "cd app && CORDOVA=1 qx compile --target=build && cd ../"
   },
   "devDependencies": {
+    "qxcompiler": "^0.2.13"
   },
   "standard": {
     "parser": "babel-eslint",
