@@ -40,6 +40,6 @@
   "libraries": [
     "../qooxdoo/framework",
     ".",
-    "../../protos/frontend"
+    "../protos/frontend"
   ]
 }

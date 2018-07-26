@@ -8,18 +8,17 @@
       "email": "tbraeutigam@gmail.com"
     }
   ],
-  "dependencies": {
-  },
-  "keywords": [
-  ],
+  "dependencies": {},
+  "keywords": [],
   "readmeFilename": "README.md",
   "scripts": {
-    "frontend": "cd app && ENV=dev DEERNATION_PLUGINS_CONTENT_DIR=/home/tobiasb/develop/deernation/plugins/content qx serve",
-    "compile-frontend-source": "cd app && qx compile && cd ../../",
-    "compile-frontend-build": "cd app && qx compile --target=build && cd ../../",
-    "compile-frontend-app": "cd app && CORDOVA=1 qx compile --target=build && cd ../../"
+    "frontend": "ENV=dev cd app && qx serve",
+    "compile-frontend-source": "cd app && qx compile && cd ../",
+    "compile-frontend-build": "cd app && qx compile --target=build && cd ../",
+    "compile-frontend-app": "cd app && CORDOVA=1 qx compile --target=build && cd ../"
   },
   "devDependencies": {
+    "qxcompiler": "^0.2.13"
   },
   "standard": {
     "parser": "babel-eslint",
