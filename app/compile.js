@@ -3,7 +3,7 @@ function compile (data, callback) {
   const glob = require('glob')
   const path = require('path')
   const config = require(process.env.DEERNATION_CONFIG || '/etc/deernation/config.json')
-  glob.sync(path.join(config.PLUGINS_CONTENT_DIR, '*', 'Manifest.json')).forEach(manifest => {
+  glob.sync(path.join(config.PLUGINS_CONTENT_DIR, '**', 'Manifest.json')).forEach(manifest => {
     const settings = require(manifest)
     if (settings.provides.type === 'contentPlugin' && settings.provides.hasOwnProperty('namespace')) {
       data.libraries.push(path.dirname(manifest))
