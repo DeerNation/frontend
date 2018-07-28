@@ -12,7 +12,7 @@
   "keywords": [],
   "readmeFilename": "README.md",
   "scripts": {
-    "frontend": "ENV=dev cd app && qx serve",
+    "frontend": "ENV=dev cd app && qx serve --listenPort=8088",
     "compile-frontend-source": "cd app && qx compile && cd ../",
     "compile-frontend-build": "cd app && qx compile --target=build && cd ../",
     "compile-frontend-app": "cd app && CORDOVA=1 qx compile --target=build && cd ../",
