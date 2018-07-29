@@ -145,6 +145,9 @@ qx.Class.define('app.Model', {
     },
 
     init: function () {
+      if (this.__modelStream) {
+        this.__modelStream.close();
+      }
       const service = app.api.Service.getInstance()
       const modelStream = this.__modelStream = service.getModel(new proto.dn.Empty())
       modelStream.addListener('message', this._onModelUpdate, this)
@@ -204,7 +207,7 @@ qx.Class.define('app.Model', {
                 // as we do not receive out own events, call the handler manually
                 this._onIntUsersUpdate(payload)
               }
-            })
+            }, this)
           } else {
             socket.unsubscribe('$INT.users')
           }

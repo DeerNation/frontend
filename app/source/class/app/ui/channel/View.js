@@ -109,6 +109,9 @@ qx.Class.define('app.ui.channel.View', {
             this._debouncedUnblock()
           }
         })
+        if (value.length === 0) {
+          this._debouncedUnblock()
+        }
       }
     },
 

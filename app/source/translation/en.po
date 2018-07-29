@@ -10,7 +10,9 @@ msgstr ""
 #: app/ui/renderer/Event.js:236 app/ui/renderer/Event.js:242
 #: app/ui/renderer/Event.js:243 app/ui/renderer/Event.js:244
 #: app/ui/renderer/Event.js:256 app/plugins/event/Renderer.js:255
-#: app/ui/channel/AbstractChannel.js:652
+#: app/ui/channel/AbstractChannel.js:652 app/ui/channel/AbstractChannel.js:655
+#: app/ui/channel/AbstractChannel.js:656 app/ui/channel/AbstractChannel.js:657
+#: app/ui/channel/AbstractChannel.js:659 app/ui/channel/AbstractChannel.js:658
 msgid "Share"
 msgstr ""
 
@@ -18,7 +20,9 @@ msgstr ""
 #: app/ui/renderer/Event.js:244 app/ui/renderer/Event.js:250
 #: app/ui/renderer/Event.js:251 app/ui/renderer/Event.js:252
 #: app/ui/renderer/Event.js:264 app/plugins/event/Renderer.js:263
-#: app/ui/channel/AbstractChannel.js:642
+#: app/ui/channel/AbstractChannel.js:642 app/ui/channel/AbstractChannel.js:645
+#: app/ui/channel/AbstractChannel.js:646 app/ui/channel/AbstractChannel.js:647
+#: app/ui/channel/AbstractChannel.js:649 app/ui/channel/AbstractChannel.js:648
 msgid "Edit"
 msgstr ""
 
@@ -26,21 +30,25 @@ msgstr ""
 #: app/ui/renderer/Event.js:252 app/ui/renderer/Event.js:258
 #: app/ui/renderer/Event.js:259 app/ui/renderer/Event.js:260
 #: app/ui/renderer/Event.js:272 app/plugins/event/Renderer.js:271
-#: app/ui/channel/AbstractChannel.js:632
+#: app/ui/channel/AbstractChannel.js:632 app/ui/channel/AbstractChannel.js:635
+#: app/ui/channel/AbstractChannel.js:636 app/ui/channel/AbstractChannel.js:637
+#: app/ui/channel/AbstractChannel.js:639 app/ui/channel/AbstractChannel.js:638
 msgid "Delete"
 msgstr ""
 
-#: app/Model.js:311 app/Model.js:319 app/ui/BaseMenu.js:48
-#: app/ui/BaseMenu.js:85 app/ui/BaseMenu.js:71 app/ui/BaseMenu.js:110
+#: app/Model.js:311 app/Model.js:319 app/Model.js:324 app/Model.js:322
+#: app/ui/BaseMenu.js:48 app/ui/BaseMenu.js:85 app/ui/BaseMenu.js:71
+#: app/ui/BaseMenu.js:110
 msgid "Online"
 msgstr ""
 
-#: app/Model.js:311 app/Model.js:319 app/ui/BaseMenu.js:85
-#: app/ui/BaseMenu.js:110
+#: app/Model.js:311 app/Model.js:319 app/Model.js:324 app/Model.js:322
+#: app/ui/BaseMenu.js:85 app/ui/BaseMenu.js:110
 msgid "Offline"
 msgstr ""
 
 #: app/ui/channel/Messages.js:175 app/ui/channel/View.js:235
+#: app/ui/channel/View.js:238
 msgid "To enter this channel you need a user account. Please login or register yourself."
 msgstr ""
 
@@ -113,10 +121,14 @@ msgid "Search (^ +K)"
 msgstr ""
 
 #: app/ui/channel/AbstractChannel.js:232 app/ui/channel/AbstractChannel.js:299
+#: app/ui/channel/AbstractChannel.js:300 app/ui/channel/AbstractChannel.js:302
+#: app/ui/channel/AbstractChannel.js:301
 msgid "Select channel"
 msgstr ""
 
 #: app/ui/channel/AbstractChannel.js:334 app/ui/channel/AbstractChannel.js:201
+#: app/ui/channel/AbstractChannel.js:202 app/ui/channel/AbstractChannel.js:204
+#: app/ui/channel/AbstractChannel.js:203
 msgid "%1 is writing..."
 msgid_plural "%1 and %2 are writing..."
 msgstr[0] ""
@@ -254,7 +266,9 @@ msgstr ""
 msgid "End"
 msgstr ""
 
-#: app/ui/channel/AbstractChannel.js:624
+#: app/ui/channel/AbstractChannel.js:624 app/ui/channel/AbstractChannel.js:627
+#: app/ui/channel/AbstractChannel.js:628 app/ui/channel/AbstractChannel.js:629
+#: app/ui/channel/AbstractChannel.js:631 app/ui/channel/AbstractChannel.js:630
 msgid "Back"
 msgstr ""
 

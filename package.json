@@ -47,7 +47,9 @@
       "scCodecMinBin",
       "$",
       "proto",
-      "jspb"
+      "jspb",
+      "jspb.BinaryReader",
+      "Uint8Array"
     ]
   }
 }

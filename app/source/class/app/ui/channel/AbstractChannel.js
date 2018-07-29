@@ -184,11 +184,13 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
           this.setPublications(publications)
           this._subscribeToChannel(subscription.getChannel())
           this.fireEvent('subscriptionApplied')
+          return null
         }).catch(app.Error.show)
         this.getChildControl('header').setSubscription(subscription)
         this.getChildControl('header').show()
       } else {
         this.getChildControl('header').exclude()
+        this.fireEvent('subscriptionApplied')
       }
     },
 
@@ -328,7 +330,7 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
               })
               promises.push(app.api.Service.getInstance().createObject(newObj))
             })
-            Promise.all(promises).then(() => {
+            qx.Promise.all(promises).then(() => {
               // open the channel
               dialog.close()
               app.ui.Menu.getInstance().getChildControl('list').getSelection().replace([selection.getItem(0)])
@@ -463,7 +465,11 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
           topic: channel.getId()
         })).then(userAcl => {
           this._handleSubscriptionAcl(userAcl.actions.includes('e'))
+        }).catch(err => {
+          this.warn('Error on getAllowedActionsForRole', err.message)
+          this._handleSubscriptionAcl(false)
         })
+        return null
       }
     },
 

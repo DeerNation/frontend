@@ -65,17 +65,17 @@ qx.Class.define('app.io.AbstractNotification', {
 
     __sendToBackend: function (value, old) {
       if (app.io.Socket.getInstance().isAuthenticated()) {
-        app.io.Service.getInstance().setFirebaseToken(new proto.dn.Token({
-          newToken: value,
-          oldToken: old
+        app.api.Service.getInstance().setFirebaseToken(new proto.dn.Token({
+          newToken: value || '',
+          oldToken: old || ''
         })).catch(app.Error.show)
         this.setTokenSentToServer(true)
       } else {
         const lid = app.io.Socket.getInstance().addListener('changeAuthenticated', ev => {
           if (ev.getData()) {
-            app.io.Service.getInstance().setFirebaseToken(new proto.dn.Token({
-              newToken: value,
-              oldToken: old
+            app.api.Service.getInstance().setFirebaseToken(new proto.dn.Token({
+              newToken: value || '',
+              oldToken: old || ''
             })).catch(app.Error.show)
             app.io.Socket.getInstance().removeListenerById(lid)
             this.setTokenSentToServer(true)

@@ -108,7 +108,7 @@ qx.Class.define('app.plugins.AbstractContentForm', {
           // update message in existing activity
           try {
             const newAct = new proto.dn.model.Activity({uid: this.getActivity().getUid()})
-            newAct.set(this.getType(), this._createContent())
+            newAct.setContent(this._createContent())
             await app.api.Service.getInstance().updateObject(new proto.dn.Object({
               activity: newAct
             }))
@@ -119,7 +119,7 @@ qx.Class.define('app.plugins.AbstractContentForm', {
           }
         } else {
           const newAct = new proto.dn.model.Activity()
-          newAct.set(this.getType(), this._createContent())
+          newAct.setContent(this._createContent())
           const newObj = new proto.dn.Object({
             publication: new proto.dn.model.Publication({
               activity: newAct,
@@ -135,6 +135,18 @@ qx.Class.define('app.plugins.AbstractContentForm', {
       } else {
         this.fireEvent('done')
       }
+    },
+
+    /**
+     * Wraps a 'google.protobuf.Any' around the message content
+     * @returns {proto.google.protobuf.Any}
+     * @private
+     */
+    _createAnyContent: function (payload) {
+      return new proto.google.protobuf.Any({
+        type_url: 'app.hirschberg-sauerland.de/protos/app.plugins.' + this.getType().toLowerCase() + '.Payload',
+        value: payload
+      })
     },
 
     /**
