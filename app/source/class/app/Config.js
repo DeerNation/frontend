@@ -36,7 +36,7 @@ qx.Class.define('app.Config', {
     socket: {
       hostname: 'localhost',
       secure: false,
-      port: 8000,
+      port: 6878,
       rejectUnauthorized: false, // Only necessary during debug if using a self-signed certificate
       // codecEngine: scCodecMinBin
     },
