@@ -37,7 +37,7 @@ qx.Class.define('app.api.Service', {
     updateProperty: function (uid, props, values, Clazz) {
       const update = new proto.dn.PropertyUpdate({
         uid: uid,
-        names: props
+        names: props instanceof app.api.Array ? props : new app.api.Array(props)
       })
       if (values !== undefined) {
         const obj = new proto.dn.Object()
