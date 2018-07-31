@@ -173,7 +173,7 @@ qx.Class.define('app.ui.list.ChatList', {
           this._frid = null
           const scrollTop = this.getPane().getScrollY()
           // console.log('AFTER: Max:', scrollMax, 'Current:', scrollTop)
-          this.setBottomReached(scrollMax > 0 && scrollTop === scrollMax)
+          this.setBottomReached(scrollMax >= 0 && scrollTop === scrollMax)
 
           if (scrollMax > scrollTop) {
             // try again
