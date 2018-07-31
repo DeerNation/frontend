@@ -185,12 +185,11 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
           this._subscribeToChannel(subscription.getChannel())
           this.fireEvent('subscriptionApplied')
           return null
-        }).catch(app.Error.show)
+        }, this).catch(app.Error.show)
         this.getChildControl('header').setSubscription(subscription)
         this.getChildControl('header').show()
       } else {
         this.getChildControl('header').exclude()
-        this.fireEvent('subscriptionApplied')
       }
     },
 
