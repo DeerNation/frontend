@@ -357,7 +357,14 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
      * @protected
      */
     _onActivity: function (payload) {
-      let data = payload.hasOwnProperty('buffer') ? payload.buffer.data : Uint8Array.from(Object.values(payload))
+      let data
+      if (payload.hasOwnProperty('buffer')) {
+        data = payload.buffer.data
+      } else if (payload.base64) {
+        data = payload.data
+      } else {
+        data = Uint8Array.from(Object.values(payload))
+      }
       const message = proto.dn.ChannelModel.deserializeBinary(data)
       if (message.getType() !== proto.dn.ChangeType.INTERNAL) {
         console.log(message)
