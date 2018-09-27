@@ -18,7 +18,10 @@ LABEL maintainer="Tobias Bräutigam tbraeutigam@gmail.com" \
    description="Web Frontend for the DeerNation application."
 
 RUN rm -r /etc/nginx/*
-COPY config/nginx.conf /etc/nginx
+COPY config/nginx/*.conf /etc/nginx/
+
+RUN chmod -R 777 /var/log/nginx /var/cache/nginx/ \
+    && chmod 644 /etc/nginx/*
 
 WORKDIR /usr/share/nginx/html/
 COPY --from=builder /app/app/build-output .
