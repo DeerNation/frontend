@@ -34,8 +34,8 @@ qx.Class.define('app.Config', {
   statics: {
     isApp: !!window.cordova,
     socket: {
-      hostname: 'localhost',
-      secure: false,
+      hostname: window.location.host,
+      secure: window.location.protocol === 'https:',
       port: 6878,
       rejectUnauthorized: false, // Only necessary during debug if using a self-signed certificate
       // codecEngine: scCodecMinBin
@@ -106,6 +106,7 @@ qx.Class.define('app.Config', {
       } else if (this.isApp) {
         this.socket.hostname = 'app.hirschberg-sauerland.de'
         this.socket.secure = true
+        this.socket.port = 6878
       }
     }
   }
