@@ -1,3 +1,4 @@
 {
-    "PLUGINS_CONTENT_DIR": "/app/plugins"
+  "PLUGINS_CONTENT_DIR": "/app/plugins",
+  "PROTOS_DIR": "/app/protos"
 }
