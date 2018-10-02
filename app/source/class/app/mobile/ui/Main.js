@@ -70,7 +70,8 @@ qx.Class.define('app.mobile.ui.Main', {
      * @protected
      */
     _onSelectedSubscription: function (ev) {
-      let newView = ev.getData() ? ev.getData().getChannel().getView() : null
+      const channel = ev.getData() && ev.getData().getChannel()
+      let newView = channel ? channel.getView() || 'channel' : null
       let oldView = ev.getOldData() ? ev.getOldData().getChannel().getView() : null
       if (oldView && oldView !== newView) {
         app.plugins.Registry.getViewInstance(oldView).resetSubscription()

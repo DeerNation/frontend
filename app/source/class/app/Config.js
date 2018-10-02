@@ -34,10 +34,10 @@ qx.Class.define('app.Config', {
   statics: {
     isApp: !!window.cordova,
     socket: {
-      hostname: window.location.host,
+      hostname: window.location.hostname,
       secure: window.location.protocol === 'https:',
       port: 6878,
-      rejectUnauthorized: false, // Only necessary during debug if using a self-signed certificate
+      rejectUnauthorized: false // Only necessary during debug if using a self-signed certificate
       // codecEngine: scCodecMinBin
     },
 
@@ -99,7 +99,7 @@ qx.Class.define('app.Config', {
     },
 
     init: function () {
-      this.isApp = !!window.cordova
+      this.isApp = !!window._cordovaNative
       let storeSocket = qx.bom.Storage.getLocal().getItem('socket')
       if (storeSocket) {
         this.socket = storeSocket
