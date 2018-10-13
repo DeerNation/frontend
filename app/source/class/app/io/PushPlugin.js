@@ -19,7 +19,8 @@
 
 /**
  * PushPlugin class is a wrapper for the phonegap-plugin-push plugin
- * to make it behave similar to {@link app.io.Firebase}
+ * to make it behave similar to {@link app.io.Firebase} to enable receiving push notification
+ * in cordova environment (aka App).
  *
  * @author Tobias Bräutigam <tbraeutigam@gmail.com>
  * @since 2018
