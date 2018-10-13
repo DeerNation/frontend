@@ -17,6 +17,15 @@
       "environment": {
         "qx.globalErrorHandling": false
       }
+    },
+    {
+      "type": "build-app",
+      "targetClass": "qx.tool.compiler.targets.BuildTarget",
+      "outputPath": "build-output",
+      "environment": {
+        "qx.globalErrorHandling": false,
+        "app.cordova": true
+      }
     }
   ],
   "defaultTarget": "source",

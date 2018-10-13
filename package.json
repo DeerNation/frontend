@@ -15,7 +15,7 @@
     "frontend": "ENV=dev cd app && qx serve --listenPort=8088",
     "compile-frontend-source": "cd app && qx compile && cd ../",
     "compile-frontend-build": "cd app && qx compile --target=build && cd ../",
-    "compile-frontend-app": "cd app && CORDOVA=1 qx compile --target=build && cd ../",
+    "compile-frontend-app": "cd app && CORDOVA=1 qx compile --target=build-app && cd ../",
     "docker-build": "docker build -t deernation/frontend:latest .",
     "docker-update": "npm run docker-build",
     "postdocker-update": "docker push deernation/frontend:latest"
