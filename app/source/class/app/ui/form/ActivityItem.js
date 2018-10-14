@@ -150,7 +150,7 @@ qx.Class.define('app.ui.form.ActivityItem', {
     },
 
     _getContentType: function(content) {
-      const match = /app\.plugins\.([^\.]+).Payload/.exec(content.getType_url())
+      const match = /app\.plugins\.([^.]+).Payload/.exec(content.getType_url())
       if (match) {
         return match[1]
       }
@@ -159,9 +159,6 @@ qx.Class.define('app.ui.form.ActivityItem', {
 
     // apply method
     _applyModel: function (value, old) {
-      if (old) {
-        old.removeRelatedBindings(this)
-      }
       if (value) {
         const container = this.getChildControl('content-container')
         const type = this._getContentType(value.getActivity().getContent())

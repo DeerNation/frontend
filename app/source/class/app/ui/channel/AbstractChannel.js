@@ -181,7 +181,9 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
           this.setChannelAcls(channelModel.getChannelActions())
           this.setChannelActivitiesAcls(channelModel.getActivityActions())
           publications.replace(channelModel.getPublications())
-          this.setPublications(publications)
+          if (initial) {
+            this.setPublications(publications)
+          }
           this._subscribeToChannel(subscription.getChannel())
           this.fireEvent('subscriptionApplied')
           return null
@@ -370,12 +372,13 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
         console.log(message)
       }
       let found, changedObject
+      const publications = this.getPublications()
       switch (message.getType()) {
         case proto.dn.ChangeType.DELETE:
           // delete
           found = this._findActivity(message.getObject().getOneOfContent().getUid())
           if (found) {
-            this.getPublications().remove(found)
+            publications.remove(found)
           }
           this._debouncedFireEvent('refresh')
           break
@@ -393,7 +396,7 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
               changedObject.setPublished(changedObject.getCreated())
             }
             this.debug('not activity to update found, creating new one')
-            this.getPublications().push(changedObject)
+            publications.push(changedObject)
           }
           this._debouncedFireEvent('refresh')
           break
@@ -403,7 +406,7 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
           if (!changedObject.getPublished()) {
             changedObject.setPublished(changedObject.getCreated())
           }
-          this.getPublications().push(changedObject)
+          publications.push(changedObject)
           this._debouncedFireEvent('refresh')
           break
 
