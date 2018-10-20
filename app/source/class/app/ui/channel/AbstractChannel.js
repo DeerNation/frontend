@@ -393,7 +393,7 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
           } else {
             // add new activity
             if (!changedObject.getPublished()) {
-              changedObject.setPublished(changedObject.getCreated())
+              changedObject.setPublished(changedObject.getActivity().getCreated())
             }
             this.debug('not activity to update found, creating new one')
             publications.push(changedObject)
@@ -404,7 +404,7 @@ qx.Class.define('app.ui.channel.AbstractChannel', {
         case proto.dn.ChangeType.ADD:
           changedObject = message.getObject().getOneOfContent()
           if (!changedObject.getPublished()) {
-            changedObject.setPublished(changedObject.getCreated())
+            changedObject.setPublished(changedObject.getActivity().getCreated())
           }
           publications.push(changedObject)
           this._debouncedFireEvent('refresh')

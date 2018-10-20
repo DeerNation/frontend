@@ -149,7 +149,7 @@ qx.Class.define('app.ui.form.ActivityItem', {
       }
     },
 
-    _getContentType: function(content) {
+    _getContentType: function (content) {
       const match = /app\.plugins\.([^.]+).Payload/.exec(content.getType_url())
       if (match) {
         return match[1]
@@ -161,7 +161,7 @@ qx.Class.define('app.ui.form.ActivityItem', {
     _applyModel: function (value, old) {
       if (value) {
         const container = this.getChildControl('content-container')
-        const type = this._getContentType(value.getActivity().getContent())
+        const type = this._getContentType(value.getActivity().getPayload())
         const currentRenderer = container.getSelection().length === 1 ? container.getSelection()[0] : null
         if (currentRenderer && currentRenderer.getType() === type) {
           // shortcut: the renderer can handle the type, so we just update the model

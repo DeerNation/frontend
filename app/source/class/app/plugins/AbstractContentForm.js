@@ -108,7 +108,7 @@ qx.Class.define('app.plugins.AbstractContentForm', {
           // update message in existing activity
           try {
             const newAct = new proto.dn.model.Activity({uid: this.getActivity().getUid()})
-            newAct.setContent(this._createContent())
+            newAct.setPayload(this._createContent())
             await app.api.Service.getInstance().updateObject(new proto.dn.Object({
               activity: newAct
             }))
@@ -119,7 +119,7 @@ qx.Class.define('app.plugins.AbstractContentForm', {
           }
         } else {
           const newAct = new proto.dn.model.Activity()
-          newAct.setContent(this._createContent())
+          newAct.setPayload(this._createContent())
           const newObj = new proto.dn.Object({
             publication: new proto.dn.model.Publication({
               activity: newAct,
