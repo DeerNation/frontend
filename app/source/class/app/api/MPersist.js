@@ -1,5 +1,5 @@
 /**
- * MPersist mixin adds automatic backend persistence feature for properties with 'perstist' annotation.
+ * MPersist mixin adds automatic backend persistence feature for properties with 'persist' annotation.
  *
  * @author Tobias Bräutigam <tbraeutigam@gmail.com>
  * @since 2018
